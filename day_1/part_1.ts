@@ -1,4 +1,4 @@
-const str = Deno.readTextFileSync("./day_1/calorie.txt").split("\n\r");
+const str = Deno.readTextFileSync("./inputs/day_1.txt").split("\n\r");
 const val: number[] = [];
 
 str.forEach((e) => {

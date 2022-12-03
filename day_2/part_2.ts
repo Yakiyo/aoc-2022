@@ -1,4 +1,4 @@
-const values = Deno.readTextFileSync("./day_2/input.txt").split("\r\n");
+const values = Deno.readTextFileSync("./inputs/day_2.txt").split("\r\n");
 
 const item = {
 	ROCK: 1,
