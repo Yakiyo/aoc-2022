@@ -18,9 +18,10 @@ let score = 0;
 
 for (let i = 0; i < values.length; i++) {
 	const k = values[i].split(" ");
-	const op = item[k[0]];
+	// @ts-ignore: hmm ts buggy or im high?
+	const op = item[k[0]], me = item[k[1]];
 
-	switch (item[k[1]]) {
+	switch (me) {
 		case "DRAW": {
 			score += op + item.DRAW;
 			break;
