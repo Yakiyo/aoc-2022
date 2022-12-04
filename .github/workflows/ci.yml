@@ -1,0 +1,21 @@
+name: Lint & Format
+
+on: push
+
+jobs:
+  ci:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1.1.0
+        with:
+          deno-version: v1.x
+
+      - name: Print deno version
+        run: deno --version
+
+      - name: Check format
+        run: deno fmt --check
+
+      - name: Lint files
+        run: deno lint
