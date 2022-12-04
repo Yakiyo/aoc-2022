@@ -9,5 +9,5 @@
 	"tasks": {
 		"fix": "deno fmt && deno lint",
 		"run": "deno run --allow-read mod.ts"
-    }
+	}
 }
