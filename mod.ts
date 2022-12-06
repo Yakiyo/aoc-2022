@@ -1,4 +1,4 @@
-export function exists(p: string): boolean {
+function exists(p: string): boolean {
 	try {
 		Deno.statSync(p);
 		return true;
@@ -21,11 +21,17 @@ if (isNaN(Number(day)) || isNaN(Number(part))) {
 	Deno.exit(1);
 }
 
-const path = `./day_${day}/part_${part}.ts`;
+let path = `./day_${day}/part_${part}.ts`;
 
 if (!exists(path)) {
-	console.error('Invalid path. Does not exist');
-	Deno.exit(1);
+	// maybe ts doesnt exist, try js
+	path = path.replace(".ts", ".js");
+
+	// even js doesnt exist, show err and exit
+	if (!exists(path)) {
+		console.error('Invalid path. Does not exist');
+		Deno.exit(1);
+	}
 }
 
 await import(path);
