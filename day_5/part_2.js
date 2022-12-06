@@ -51,7 +51,9 @@ procedures.forEach((procedure) => {
 	);
 });
 
-const answer = Object.values(stacks).map((stack) => stack[0]).join('');
+const answer = Object.values(stacks).map((stack) => stack[0]).join(
+	'',
+);
 
 // Output the answers
 

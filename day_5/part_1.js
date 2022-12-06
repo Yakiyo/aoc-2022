@@ -42,7 +42,6 @@ values.forEach((line) => {
 	}
 });
 
-
 procedures.forEach((procedure) => {
 	const cratesRemoved = stacks[procedure.from].substring(
 		0,
