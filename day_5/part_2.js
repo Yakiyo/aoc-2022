@@ -8,7 +8,6 @@ const values = Deno.readTextFileSync('./inputs/day_5.txt').split(
 );
 
 const stacks = {};
-// let stacks = {};
 const procedures = [];
 
 values.forEach((line) => {
@@ -42,8 +41,6 @@ values.forEach((line) => {
 		}
 	}
 });
-
-// stacks = { ...stacks };
 
 procedures.forEach((procedure) => {
 	stacks[procedure.to] =

@@ -7,8 +7,7 @@ const values = Deno.readTextFileSync('./inputs/day_5.txt').split(
 	'\r\n',
 );
 
-const stacks1 = {};
-// let stacks2 = {};
+const stacks = {};
 const procedures = [];
 
 values.forEach((line) => {
@@ -37,43 +36,29 @@ values.forEach((line) => {
 			const stack = (index / 4) + 1;
 			const crate = line.substring(index, index + 4).match(/\w/g);
 
-			stacks1[stack] = (!stacks1[stack] ? '' : stacks1[stack]) +
+			stacks[stack] = (!stacks[stack] ? '' : stacks[stack]) +
 				(crate ? crate : '');
 		}
 	}
 });
 
-// stacks2 = { ...stacks1 };
-
-// Get 1st Answer
 
 procedures.forEach((procedure) => {
-	const cratesRemoved = stacks1[procedure.from].substring(
+	const cratesRemoved = stacks[procedure.from].substring(
 		0,
 		procedure.move,
 	);
 
-	stacks1[procedure.to] =
+	stacks[procedure.to] =
 		cratesRemoved.split('').reduce((crates, crate) =>
-			crate + crates, '') + stacks1[procedure.to];
-	stacks1[procedure.from] = stacks1[procedure.from].substring(
+			crate + crates, '') + stacks[procedure.to];
+	stacks[procedure.from] = stacks[procedure.from].substring(
 		procedure.move,
 	);
 });
 
-const answer = Object.values(stacks1).map((stack) => stack[0]).join(
+const answer = Object.values(stacks).map((stack) => stack[0]).join(
 	'',
 );
-
-// Get 2nd Answer
-
-// procedures.forEach(procedure => {
-//   stacks2[procedure.to] = stacks2[procedure.from].substring(0, procedure.move) + stacks2[procedure.to];
-//   stacks2[procedure.from] = stacks2[procedure.from].substring(procedure.move);
-// });
-
-// let answer2 = Object.values(stacks2).map(stack => stack[0]).join('');
-
-// Output the answers
 
 console.log(answer);
