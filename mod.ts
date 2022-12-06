@@ -25,7 +25,7 @@ let path = `./day_${day}/part_${part}.ts`;
 
 if (!exists(path)) {
 	// maybe ts doesnt exist, try js
-	path = path.replace(".ts", ".js");
+	path = path.replace('.ts', '.js');
 
 	// even js doesnt exist, show err and exit
 	if (!exists(path)) {
