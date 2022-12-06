@@ -8,6 +8,8 @@
 	},
 	"tasks": {
 		"fix": "deno fmt && deno lint",
-		"run": "deno run --allow-read mod.ts"
+		"run": "deno run --allow-read mod.ts",
+		"install-deno": "curl -fsSL https://deno.land/x/install/install.sh | sh",
+		"set": "export DENO_INSTALL=\"/home/codespace/.deno\" && export PATH=\"$DENO_INSTALL/bin:$PATH\""
 	}
 }
