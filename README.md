@@ -1,6 +1,7 @@
 # Advent of Code 2022
 
-> **Note**: Ditching this cz, exams swamped me and i cant get time to do them anymore.
+> **Note**: Ditching this cz, exams swamped me and i cant get time to
+> do them anymore.
 
 Solutions for my Advent of Code, 2022 challenges.
 
